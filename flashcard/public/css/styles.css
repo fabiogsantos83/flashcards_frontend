@@ -1,0 +1,22 @@
+@font-face {
+    font-family: Roboto;
+    src: url('../font/Roboto-Regular.ttf');
+  }
+body {
+    background-color: rgb(205, 222, 231);
+    font-family:'Roboto' ;
+}
+
+
+
+.menu-color {
+    background-color: rgb(55, 64, 92) !important;
+}
+
+.menu-color a {
+    color: rgb(99, 189, 144);
+}
+
+.menu-color a:hover {
+    color: rgb(120, 230, 175);
+}
