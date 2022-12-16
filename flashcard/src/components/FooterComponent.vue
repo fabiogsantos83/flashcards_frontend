@@ -3,14 +3,14 @@
         <nav class="navbar navbar-expand-sm fixed-bottom menu-color">
             <div class=" container-fluid justify-content-center">
 
-                <a class="navbar-item px-4" aria-current="page" href="#">
+                <a class="navbar-item px-4" aria-current="page" href="/">
                     <span class="material-symbols-outlined">
                         home
                     </span>
                 </a>
-                <a class="navbar-item px-4" href="#">
+                <a class="navbar-item px-4" href="class">
                     <span class="material-symbols-outlined">
-                        article
+                        web_stories
                     </span>
                 </a>
                 <a class="navbar-item px-4" href="#">
