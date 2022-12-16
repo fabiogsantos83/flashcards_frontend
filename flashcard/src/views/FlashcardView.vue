@@ -1,11 +1,11 @@
 <template>
-  <div class="container-md">
+  <div class="container-md" style="margin-bottom: 70px;">
     <BreadcrumbComponent className="Inglês" lessonName="There" />
     <div class="card card-painel">
       <div class="card-header d-flex justify-content-end">
 
         <div>
-          <a href="#" class="text-end"><span class="material-symbols-outlined">delete</span></a>
+          <a href="#" class="link-danger"><span class="material-symbols-outlined">delete</span></a>
         </div>
       </div>
       <div class="card-body">
@@ -25,7 +25,7 @@
     <div class="card card-painel mt-4">
       <div class="card-header d-flex justify-content-end">
         <div>
-          <a href="#" class="text-end"><span class="material-symbols-outlined">delete</span></a>
+          <a href="#" class="link-danger"><span class="material-symbols-outlined">delete</span></a>
         </div>
       </div>
       <div class="card-body">
@@ -47,7 +47,13 @@
       <div class="card-body">
         <a href="#">+ Adicionar Cartão</a>
       </div>
+    </div>
 
+    <div class="row pt-3">
+      <div class="col-12">
+        <button class="btn btn-primary btn-lg float-end">Salvar</button>
+        <button class="btn btn-secondary btn-lg float-end me-2">Voltar</button>
+      </div>
     </div>
   </div>
 
