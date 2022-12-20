@@ -8,14 +8,14 @@
                 <div class="card-body p-4">
                     <div class="mb-3 text-start">
                         <input type="email" v-bind:class="[v$.email.$error ? 'field-red' : '']" class="form-control"
-                            placeholder="Email" v-model="email">
+                            placeholder="Email" v-model="state.email">
                         <span class="invalid-message" v-for="error of v$.email.$errors" :key="error.$uid">
                             {{ error.$message }}
                         </span>
                     </div>
                     <div class="mb-4 text-start">
                         <input type="password" v-bind:class="[v$.password.$error ? 'field-red' : '']" maxlength="50"
-                            class="form-control" placeholder="Password" v-model="password">
+                            class="form-control" placeholder="Password" v-model="state.password">
                         <span class="invalid-message" v-for="error of v$.password.$errors" :key="error.$uid">
                             {{ error.$message }}
                         </span>
@@ -36,41 +36,46 @@
 <script>
 import { required, minLength, email, helpers, maxLength } from "@vuelidate/validators";
 import { useVuelidate } from '@vuelidate/core'
+import { reactive } from '@vue/reactivity';
+import { computed } from '@vue/runtime-core';
 
 export default {
     name: 'LoginView',
     components: {
     },
-    data() {
-        return {
-            campoObrigatorio: '* Campo obrigatório',
+    setup() {
+
+        const state = reactive({
             email: '',
             password: ''
-        }
-    },
-    setup: () => ({ v$: useVuelidate({$lazy: true,$autoDirty: true}) }),
-    validations() {
-        return {
+        })
+
+        const campoObrigatorio = '* Campo obrigatório';
+
+        const rules = computed(() => ({
             email:
             {
-                required: helpers.withMessage(this.campoObrigatorio, required),
+                required: helpers.withMessage(campoObrigatorio, required),
                 email: helpers.withMessage('* Email inválido', email)
             },
             password:
             {
-                required: helpers.withMessage(this.campoObrigatorio, required),
+                required: helpers.withMessage(campoObrigatorio, required),
                 minLength: helpers.withMessage("* Password deve ter no minimo 6 caracteres", minLength(6)),
                 maxLength: helpers.withMessage("* Password deve ter no máximo 50 caracteres", maxLength(50))
             }
-        }
-    },
-    methods: {
-        login() {
+        }))
+
+        const v$ = useVuelidate(rules, state, { $lazy: true, $autoDirty: true })
+
+        function login() {
             this.v$.$validate();
             if (!this.v$.$error) {
                 alert('Sucesso')
             }
         }
+
+        return { state, campoObrigatorio, login, v$ }
     }
 }
 </script>
