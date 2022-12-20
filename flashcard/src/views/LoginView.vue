@@ -34,16 +34,22 @@
 </template>
 
 <script>
+import { inject } from 'vue'
 import { required, minLength, email, helpers, maxLength } from "@vuelidate/validators";
 import { useVuelidate } from '@vuelidate/core'
 import { reactive } from '@vue/reactivity';
 import { computed } from '@vue/runtime-core';
+import api from '@/services/api.js'
+import { useRouter } from 'vue-router'
 
 export default {
     name: 'LoginView',
     components: {
     },
     setup() {
+
+        const toast = inject('toast')
+        const router = useRouter()
 
         const state = reactive({
             email: '',
@@ -71,12 +77,22 @@ export default {
         function login() {
             this.v$.$validate();
             if (!this.v$.$error) {
-                alert('Sucesso')
+                api.post('authorize/login', state).then(response => {
+                    console.log(response.data);
+                    router.push('/')
+                }).catch(error => {
+                    toast.error(error.response.data.error)
+                });
             }
         }
 
         return { state, campoObrigatorio, login, v$ }
     }
+    // ,mounted()
+    // {
+    //     alert('cu');
+    //      this.$toast.success("Order placed.")
+    // }
 }
 </script>
 
