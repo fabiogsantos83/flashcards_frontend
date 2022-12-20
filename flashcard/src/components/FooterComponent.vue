@@ -1,5 +1,5 @@
 <template>
-    <div class="d-lg-none d-sm-block">
+    <div v-if="ViewMenu()" class="d-lg-none d-sm-block">
         <nav class="navbar navbar-expand-sm fixed-bottom menu-color">
             <div class=" container-fluid justify-content-center">
 
@@ -34,6 +34,13 @@ export default {
     name: 'FooterComponent',
     props: {
 
+    },
+    methods: {
+        ViewMenu() {
+            if (this.$route.name === 'login' || this.$route.name === 'add-user')
+                return false;
+            return true;
+        }
     }
 }
 </script>

@@ -6,7 +6,7 @@
                     Flashcards
                 </a>
 
-                <div class="collapse navbar-collapse justify-content-end px-4" id="menuTop">
+                <div v-if="ViewMenu()" class="collapse navbar-collapse justify-content-end px-4" id="menuTop">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/">Home</a>
@@ -31,7 +31,14 @@
 export default {
     name: 'HeaderComponent',
     props: {
-
+    },
+    methods: {
+        ViewMenu() {
+            if (this.$route.name === 'login' || this.$route.name === 'add-user')
+                return false;
+            return true;
+        }
     }
+
 }
 </script>
