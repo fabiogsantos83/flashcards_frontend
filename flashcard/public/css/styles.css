@@ -1,10 +1,11 @@
 @font-face {
     font-family: Roboto;
     src: url('../font/Roboto-Regular.ttf');
-  }
+}
+
 body {
     background-color: rgb(255, 255, 255);
-    font-family:'Roboto' ;
+    font-family: 'Roboto';
 }
 
 
@@ -19,4 +20,35 @@ body {
 
 .menu-color a:hover {
     color: rgb(120, 230, 175);
+}
+
+.invalid-message {
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #dc3545;
+}
+
+.field-red {
+    border-color: #dc3545;
+}
+
+.field-red {
+    border-color: #dc3545;
+}
+
+.field-red::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(250, 121, 121);
+    opacity: 1;
+    /* Firefox */
+}
+
+.field-red:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgb(250, 121, 121);
+}
+
+.field-red::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgb(250, 121, 121);
 }

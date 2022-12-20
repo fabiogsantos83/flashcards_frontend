@@ -4,6 +4,8 @@ import ClassView from '../views/ClassView.vue'
 import LessonView from '../views/LessonView.vue'
 import FlashcardView from '../views/FlashcardView.vue'
 import SearchView from '../views/SearchView.vue'
+import FlashView from '../views/FlashView.vue'
+import LoginView from '../views/LoginView.vue'
 
 const routes = [
   {
@@ -30,6 +32,16 @@ const routes = [
     path: '/search',
     name: 'search',
     component: SearchView
+  },
+  {
+    path: '/study',
+    name: 'study',
+    component: FlashView
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
   },
   {
     path: '/about',
