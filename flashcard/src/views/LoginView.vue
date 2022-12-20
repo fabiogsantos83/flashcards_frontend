@@ -1,7 +1,7 @@
 <template>
-    <div class="row">
-        <div class="col-md-5 col-sm-12 panel-login">
-            <form @submit.prevent="login">
+    <form @submit.prevent="login">
+        <div class="row">
+            <div class="col-md-5 col-sm-12 panel-login">
                 <div class="login-page">
                     <div class="col-md-10">
                         <h2 class="mb-5"><b>Faça seu Login</b></h2>
@@ -22,30 +22,18 @@
                         <button type="submit" class="btn btn-primary w-100 mb-2 "><span
                                 class="material-icons-outlined align-middle">login</span> <span
                                 class="align-middle">Entrar</span></button>
-                        <button type="submit" class="btn btn-outline-secondary w-100"><span
+                        <button type="button" class="btn btn-outline-secondary w-100" v-on:click="createUser()"><span
                                 class="material-icons-outlined align-middle">account_circle</span> <span
-                                class="align-middle">Criar conta</span></button>
-
-
+                                class="align-middle">Criar
+                                conta</span></button>
                     </div>
-                    <!-- <div class="card col-md-10 ">
-                        <div class="card-header">
-                            Login
-                        </div>
-                        <div class="card-body p-4">
-                            
-                        </div>
-                    </div> -->
                 </div>
-
-            </form>
+            </div>
+            <div class="col-md-7 d-md-flex justify-content-center align-items-center d-none">
+                <img class="img-login" src="../assets/undraw_Login_re_4vu2.png">
+            </div>
         </div>
-
-        <div class="col-md-7 d-flex justify-content-center align-items-center">
-            <img class="img-login" src="../assets/undraw_Login_re_4vu2.png">
-        </div>
-    </div>
-
+    </form>
 </template>
 
 <script>
@@ -100,7 +88,11 @@ export default {
             }
         }
 
-        return { state, campoObrigatorio, login, v$ }
+        function createUser() {
+            router.push('/add-user')
+        }
+
+        return { state, campoObrigatorio, login, createUser, v$ }
     }
 }
 </script>

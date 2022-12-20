@@ -6,6 +6,7 @@ import FlashcardView from '../views/FlashcardView.vue'
 import SearchView from '../views/SearchView.vue'
 import FlashView from '../views/FlashView.vue'
 import LoginView from '../views/LoginView.vue'
+import AddUserView from '../views/AddUserView.vue'
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/add-user',
+    name: 'add-user',
+    component: AddUserView
   },
   {
     path: '/about',
