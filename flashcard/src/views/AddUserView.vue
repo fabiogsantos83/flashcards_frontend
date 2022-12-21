@@ -1,10 +1,10 @@
 <template>
     <form @submit.prevent="create">
         <div class="row">
-            <div class="col-md-7 d-md-flex justify-content-center align-items-center d-none">
+            <div class="col-md-7 panel-login d-md-flex justify-content-center align-items-center d-none">
                 <img class="img-login" src="../assets/undraw_Add_user_re_5oib.png">
             </div>
-            <div class="col-md-5 col-sm-12 panel-login">
+            <div class="col-md-5 col-sm-12">
                 <div class="login-page">
                     <div class="col-md-10">
 
@@ -140,6 +140,6 @@ export default {
 }
 
 .panel-login {
-    background-color: #f2f2f2
+    background-color: #ffffff !important;
 }
 </style>

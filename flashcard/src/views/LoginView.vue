@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="login">
         <div class="row">
-            <div class="col-md-5 col-sm-12 panel-login">
+            <div class="col-md-5 col-sm-12">
                 <div class="login-page">
                     <div class="col-md-10">
                         <h2 class="mb-5"><b>Faça seu Login</b></h2>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 d-md-flex justify-content-center align-items-center d-none">
+            <div class="panel-login col-md-7 d-flex justify-content-center align-items-center">
                 <img class="img-login" src="../assets/undraw_Login_re_4vu2.png">
             </div>
         </div>
@@ -110,6 +110,6 @@ export default {
 }
 
 .panel-login {
-    background-color: #f2f2f2
+    background-color: #ffffff !important;
 }
 </style>
