@@ -5,12 +5,12 @@
 
                 <a class="navbar-item px-4" aria-current="page" href="/">
                     <span class="material-symbols-outlined">
-                        home
+                        cognition
                     </span>
                 </a>
                 <a class="navbar-item px-4" href="class">
                     <span class="material-symbols-outlined">
-                        web_stories
+                        add_to_photos
                     </span>
                 </a>
                 <a class="navbar-item px-4" href="#">

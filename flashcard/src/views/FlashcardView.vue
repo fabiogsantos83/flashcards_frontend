@@ -1,5 +1,5 @@
 <template>
-  <div class="container-md" style="margin-bottom: 70px;">
+  <div class="container-md" style="margin-bottom: 70px; margin-top: 80px">
     <BreadcrumbComponent className="Inglês" lessonName="There" />
     <div class="card card-painel">
       <div class="card-header d-flex justify-content-end">
